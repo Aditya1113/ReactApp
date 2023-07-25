@@ -22,11 +22,32 @@ export default function TodoMain() {
 
     const newtodoItems = todoItems.map((todo) =>
       todo.action === item.action // checking the condition if the clicked todo description matches with the todoitemsarray
-        ? { ...todo, done: !todo.done }
+        ? { ...todo,done: !todo.done}
         : todo
     );
-
     setTodoItems(newtodoItems);
+
+
+    console.log(newtodoItems)
+
+    // const toggleTodo = (item) => {
+
+    //     const newTodoItems = []; //creating a blank array
+
+    //     for (const todo of todoItems) {
+    //       if (todo.action === item.action) {
+    //         newTodoItems.push({ done: !todo.done, ...todo });
+    //       } else {
+    //         newTodoItems.push({ ...todo });
+    //       }
+    //     }
+    //   };
+
+    //alternate way
+      
+
+
+      
 
     //todo =    { action: "Buy Flowers", done: false }
     //todo =  { action: "Collect Tickets", done: true },
@@ -35,17 +56,18 @@ export default function TodoMain() {
   const todoTableRows = (doneValue) => {
 
     //doneValue = false
-    
+
     //doneValue = true 
     return todoItems.filter(item=>item.done==doneValue).map((item) => (
       <tr className="text-center">
         <td>{item.action}</td>
         <td>
-          <input
-            type="checkbox"
-            checked={item.done}
-            onChange={() => toggleTodo(item)}
-          />
+        <input
+  type="checkbox"
+  checked={item.done}
+  onChange={() => toggleTodo(item)}
+/>
+
         </td>
       </tr>
     ));
