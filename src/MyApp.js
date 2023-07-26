@@ -9,6 +9,12 @@ import Summary from './components/Summary';
 import ObjectState from './components/ObjectState';
 import Login from './components/Login'
 import TodoMain from './components/TodoList/TodoMain'
+import UseEffectDemo from './components/Hooks/UseEffectDemo';
+import UseRefDemo from './components/Hooks/UseRefDemo';
+import UseRefDom from './components/Hooks/UseRefDom';
+import UseContext from './components/Hooks/UseContext';
+import Users from './components/API/Users';
+
 
 function MyApp() {
 
@@ -97,7 +103,14 @@ function MyApp() {
         {/* <ObjectState/> */}
         {/* <Login/> */}
 
-        <TodoMain/>
+        {/* <TodoMain/> */}
+        
+        {/* <UseEffectDemo/> */}
+        {/* <UseRefDemo/> */}
+        {/* <UseRefDom/> */}
+        {/* <UseContext/> */}
+        <Users/>
+
     </div>
   );
 }
