@@ -14,6 +14,14 @@ import UseRefDemo from './components/Hooks/UseRefDemo';
 import UseRefDom from './components/Hooks/UseRefDom';
 import UseContext from './components/Hooks/UseContext';
 import Users from './components/API/Users';
+import ClickCounter from './components/HOC/ClickCounter';
+import HoverCounter from './components/HOC/HoverCounter';
+import { Provider } from 'react-redux';
+import Store from './components/REACT-REDUX/Store';
+import CakeContainer from './components/REACT-REDUX/CAKE/CakeContainer';
+import HookCakeContainer from './components/REACT-REDUX/CAKE/HookCakeContainer';
+import IceCreamContainer from './components/REACT-REDUX/ICECREAM/IceCreamContainer';
+import UserContainer from './components/REACT-REDUX/USER/UserContainer';
 
 
 function MyApp() {
@@ -70,14 +78,14 @@ function MyApp() {
   }
 
   return (
-    <div>
-        {/* <Greet name="Peter Parker" age = {45} isAdmin={true}/>
+    // <div>
+        /* <Greet name="Peter Parker" age = {45} isAdmin={true}/>
         <Person names={nameList}/>
-        {/* <Third comp fruits ={fruits}/> */}
-        {/* <EmployeeList data = {personData}/> */}
-        {/* <Counter/> */}
+        {/* <Third comp fruits ={fruits}/> */
+        /* <EmployeeList data = {personData}/> */
+        /* <Counter/> */
 
-        {/* <table className='table table-bordered'>
+        /* <table className='table table-bordered'>
           <thead>
               <tr>
                 <th>S.no.</th>
@@ -98,20 +106,33 @@ function MyApp() {
               ))
             }
           </tbody>
-        </table> */}
+        </table> */
 
-        {/* <ObjectState/> */}
-        {/* <Login/> */}
+        // {/* <ObjectState/> */}
+        // // {/* <Login/> */}
 
-        {/* <TodoMain/> */}
+        // {/* <TodoMain/> */}
         
-        {/* <UseEffectDemo/> */}
-        {/* <UseRefDemo/> */}
-        {/* <UseRefDom/> */}
-        {/* <UseContext/> */}
-        <Users/>
+        // {/* <UseEffectDemo/> */}
+        // {/* <UseRefDemo/> */}
+        // {/* <UseRefDom/> */}
+        // {/* <UseContext/> */}
+        // {/* <Users/> */}
+        // {/* <ClickCounter myValue={2} info = "I am Click Counter"/>
+        // <HoverCounter myValue={3} info = "I am Hover Counter"/> */}
 
-    </div>
+        <Provider store={Store}>
+          <HookCakeContainer/>
+          <hr/>
+          <IceCreamContainer/>
+          <hr/>
+          <UserContainer/>
+
+        </Provider>
+
+
+
+    // {/* </div> */}
   );
 }
 

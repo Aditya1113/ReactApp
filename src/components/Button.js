@@ -15,6 +15,7 @@ export default function Button(props) {
 
     //deafult props
   Button.defaultProps = {
+    
     theme: "danger",
     text:"default Button"
 
