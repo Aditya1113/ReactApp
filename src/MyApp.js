@@ -38,6 +38,7 @@ import EditUser from './components/Pages/EditUser';
 import EditPost from './components/Pages/EditPost';
 import AddPost from './components/Pages/AddPost';
 import UserLogin from './components/Pages/UserLogin';
+import SignUp from './components/Pages/SignUp';
 
 
 
@@ -172,6 +173,7 @@ function MyApp() {
             {/* :id -> placeholder */}
             <Route path='add' element={<AddPost/>}/>  
             <Route path='login' element={<UserLogin/>}/>  
+            <Route path='signup' element={<SignUp/>}/>  
 
           </Routes>
  

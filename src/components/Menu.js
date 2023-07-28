@@ -4,26 +4,20 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 export default function Menu() {
   const [role, setRole] = useState();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     let user_role = sessionStorage.getItem("role");
     setRole(user_role);
   });
 
-
-  
-
-  const LogoutProcess=()=>{
-    sessionStorage.removeItem('role')
-    alert("logout successfully")
-    navigate('/login')
-  }
+  const LogoutProcess = () => {
+    sessionStorage.removeItem("role");
+    alert("logout successfully");
+    navigate("/login");
+  };
 
   return (
-
-
-
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-success">
         <div className="container-fluid">
@@ -72,17 +66,27 @@ export default function Menu() {
 
               {role ? (
                 <li>
-                
-                <button onClick={LogoutProcess} className="btn btn-sm btn-danger">
+                  <button
+                    onClick={LogoutProcess}
+                    className="btn btn-sm btn-danger"
+                  >
                     Logout
-                </button> 
+                  </button>
                 </li>
               ) : (
-                <li>
-                  <Link className="nav-link" to="/login" href="#">
-                    Login
-                  </Link>
-                </li>
+                <>
+                  <li>
+                    <Link className="nav-link" to="/login" href="#">
+                      Login
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link className="nav-link" to="/signup" href="#">
+                      Signup
+                    </Link>
+                  </li>
+                </>
               )}
             </ul>
           </div>
