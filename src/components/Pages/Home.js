@@ -1,21 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React from 'react'
+
 
 export default function Home() {
 
-  // const [role,setRole] = useState()
-
-  // const navigate = useNavigate()
-
-  // useEffect(()=>{
-
-  //   let user_role = sessionStorage.getItem('role')
-  //   setRole(user_role)
-
-  //   if( user_role===null){navigate('/login')}
-
-  //   console.log(user_role)
-  // })
   return (
 
     <div className='container mt-4'>

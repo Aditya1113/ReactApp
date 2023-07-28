@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export default function Menu() {
   const [role, setRole] = useState();
@@ -9,7 +9,7 @@ export default function Menu() {
   useEffect(() => {
     let user_role = sessionStorage.getItem("role");
     setRole(user_role);
-  });
+  },[]);
 
   const LogoutProcess = () => {
     sessionStorage.removeItem("role");

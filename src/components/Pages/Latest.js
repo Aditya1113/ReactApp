@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Latest() {
   const [posts, setPosts] = useState();
 
-  const navigate = useNavigate()
+
 
   const getPosts=()=>{
     axios.get("https://test-api-users.onrender.com/posts")

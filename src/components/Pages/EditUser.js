@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 
 export default function EditUser() {
 
@@ -16,7 +16,7 @@ export default function EditUser() {
             .get(`https://test-api-users.onrender.com/users/${id}`)
             .then((response) => setRecord(response.data))
             .catch((error) => console.log(error));
-        },[])
+        },[id])
      
 
     const UpdateRecord=()=>{

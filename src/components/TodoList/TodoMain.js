@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import VisibilityControl from "../VisibilityControl";
 
 export default function TodoMain() {
-  const [username, setUsername] = useState("Peter");
+ 
 
   const [todoItems, setTodoItems] = useState([
     { action: "Buy Flowers", done: false },
@@ -58,7 +58,7 @@ export default function TodoMain() {
     //doneValue = false
 
     //doneValue = true 
-    return todoItems.filter(item=>item.done==doneValue).map((item) => (
+    return todoItems.filter(item=>item.done===doneValue).map((item) => (
       <tr className="text-center">
         <td>{item.action}</td>
         <td>
@@ -87,7 +87,7 @@ export default function TodoMain() {
       <div className="row">
         <div className="col-md-12">
           <h4 className="bg-primary text-white text-center">
-            {username}'s Todo List (
+            My Todo List (
             {
               todoItems.filter((todo) => !todo.done).length // taking the length of done values which are false
             }{" "}

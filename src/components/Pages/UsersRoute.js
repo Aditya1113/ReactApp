@@ -37,11 +37,6 @@ export default function UsersRoute() {
     .catch((error) => console.log(error));
   }
 
-  const EditRecord=(data)=>{
-    setShowEditForm(true)
-
-    setRecord(data)
-  }
   // console.log(record)
 
   const getPosts = () => {
