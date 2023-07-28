@@ -22,6 +22,23 @@ import CakeContainer from './components/REACT-REDUX/CAKE/CakeContainer';
 import HookCakeContainer from './components/REACT-REDUX/CAKE/HookCakeContainer';
 import IceCreamContainer from './components/REACT-REDUX/ICECREAM/IceCreamContainer';
 import UserContainer from './components/REACT-REDUX/USER/UserContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Menu from './components/Menu';
+import ViewNotFound from './components/Pages/ViewNotFound';
+
+import UsersRoute from './components/Pages/UsersRoute';
+import Posts from './components/Pages/Posts';
+import Latest from './components/Pages/Latest';
+import Disliked from './components/Pages/Disliked';
+import Liked from './components/Pages/Liked';
+import Oldest from './components/Pages/Oldest';
+import EditUser from './components/Pages/EditUser';
+import EditPost from './components/Pages/EditPost';
+import AddPost from './components/Pages/AddPost';
+import UserLogin from './components/Pages/UserLogin';
+
 
 
 function MyApp() {
@@ -121,14 +138,45 @@ function MyApp() {
         // {/* <ClickCounter myValue={2} info = "I am Click Counter"/>
         // <HoverCounter myValue={3} info = "I am Hover Counter"/> */}
 
-        <Provider store={Store}>
-          <HookCakeContainer/>
-          <hr/>
-          <IceCreamContainer/>
-          <hr/>
-          <UserContainer/>
+        // <Provider store={Store}>
+        //   <HookCakeContainer/>
+        //   <hr/>
+        //   <IceCreamContainer/>
+        //   <hr/>
+        //   <UserContainer/>
 
-        </Provider>
+        // </Provider>
+      
+       
+        <BrowserRouter>
+        
+        <Menu/>
+     
+          <Routes>
+            
+            <Route path="/" element = {<Home/>}/>
+            <Route path='posts' element={<Posts/>}>
+                <Route path='latest' element={<Latest/>}/>
+                <Route path='oldest' element={<Oldest/>}/>
+                <Route path='liked' element={<Liked/>}/>
+                <Route path='disliked' element={<Disliked/>}/>
+            </Route>
+            <Route path="/about" element = {<About/>}/>
+            <Route path="/todo" element = {<TodoMain/>}/>
+            <Route path="/users" element = {<UsersRoute/>}/>
+            {/* <Route path="*" element={<ViewNotFound/>}/> */}
+
+            <Route path='/users/:id' element={<EditUser/>}/>  
+
+            <Route path='/posts/latest/edit/:id' element={<EditPost/>}/>  
+            {/* :id -> placeholder */}
+            <Route path='add' element={<AddPost/>}/>  
+            <Route path='login' element={<UserLogin/>}/>  
+
+          </Routes>
+ 
+        </BrowserRouter>
+        
 
 
 

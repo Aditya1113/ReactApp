@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Users() {
+export default function UsersRoute() {
   const [users, setUsers] = useState();
 
   const [showAddForm, setShowAddForm] = useState(false);
@@ -93,7 +94,13 @@ export default function Users() {
                       <td>{data.email}</td>
                       <td>{data.website}</td>
                       <td>
-                        <button className="btn btn-sm btn-info" onClick={()=>EditRecord(data)}>Edit</button>
+                        {/* <button className="btn btn-sm btn-info" onClick={()=>EditRecord(data)}>Edit</button> */}
+
+                        {/* <Link to={`/users/${data.id}`} className="btn btn-sm btn-info">Edit</Link> */}
+
+                        <Link to={`/users/${data.id}`} state={data} className="btn btn-sm btn-info">Edit</Link>
+
+
                       </td>
                     </tr>
                   ))
