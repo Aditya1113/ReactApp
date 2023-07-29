@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Menu() {
   const [role, setRole] = useState();
@@ -9,7 +9,7 @@ export default function Menu() {
   useEffect(() => {
     let user_role = sessionStorage.getItem("role");
     setRole(user_role);
-  },[]);
+  }, []);
 
   const LogoutProcess = () => {
     sessionStorage.removeItem("role");
@@ -21,8 +21,20 @@ export default function Menu() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-success">
         <div className="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          xs
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item active">
                 <Link
                   className="nav-link active"
