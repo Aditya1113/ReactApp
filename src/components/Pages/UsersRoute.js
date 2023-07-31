@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function UsersRoute() {
   const [users, setUsers] = useState();
@@ -10,6 +10,7 @@ export default function UsersRoute() {
 
   const [record, setRecord] = useState({ name: "", email: "", website: "" });
 
+  const navigate = useNavigate()
   const createNewRecord = () => {
     axios
       .post("https://test-api-users.onrender.com/users", record)
@@ -50,6 +51,14 @@ export default function UsersRoute() {
     getPosts();
   }, []);
 
+
+  const deleteUser=(id)=>{
+    if(window.confirm('Are you sure to want to Delete?')){
+      axios.delete(`https://test-api-users.onrender.com/users/${id}`)
+      .then(()=>getPosts())
+      .catch(error=>console.log(error))
+    }
+  }
   //json server
   // json-server --watch db.json -p 3002
 
@@ -93,7 +102,8 @@ export default function UsersRoute() {
 
                         {/* <Link to={`/users/${data.id}`} className="btn btn-sm btn-info">Edit</Link> */}
 
-                        <Link to={`/users/${data.id}`} state={data} className="btn btn-sm btn-info">Edit</Link>
+                        <Link to={`/users/${data.id}`} state={data} className="btn btn-sm btn-info">Edit</Link>&nbsp; &nbsp;
+                        <button className="btn btn-sm btn-danger" onClick={()=>deleteUser(data.id)}>Delete</button>
 
 
                       </td>
