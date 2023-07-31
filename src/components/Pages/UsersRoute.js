@@ -10,7 +10,7 @@ export default function UsersRoute() {
 
   const [record, setRecord] = useState({ name: "", email: "", website: "" });
 
-  const navigate = useNavigate()
+
   const createNewRecord = () => {
     axios
       .post("https://test-api-users.onrender.com/users", record)
